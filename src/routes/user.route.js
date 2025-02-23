@@ -3,9 +3,9 @@ import { createUser, deleteUser, listUsers, updateUser, listUser } from "../cont
 
 const router = Router()             
 
-router.post('/', createUser)
+//router.post('/', createUser)
 
-router.put('/:id', updateUser)
+router.post('/', updateUser)
 
 router.delete('/:id', deleteUser)
 

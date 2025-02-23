@@ -42,7 +42,7 @@ export const listUsers = async (req, res)=>{
 
 export const listUser = async (req, res)=>{
     try{
-        const {ci} = await req.params
+        const {ci} = await req.body
         const users= await User.findOne({ci:ci}).lean()
         console.log(users)
         res.json(users)
