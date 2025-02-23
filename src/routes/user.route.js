@@ -3,7 +3,7 @@ import { createUser, deleteUser, listUsers, updateUser, listUser } from "../cont
 
 const router = Router()             
 
-//router.post('/', createUser)
+router.post('/create', createUser)
 
 router.put('/', updateUser)
 
