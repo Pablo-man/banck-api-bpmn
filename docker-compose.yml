@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   banck:
-    image: pamendeza/back-api:latest
+    image: pamendeza/banck-api-bpm:latest
     ports:
       - "4000:4000"
     environment:
