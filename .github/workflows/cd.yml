@@ -1,0 +1,22 @@
+name: Registry image
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  # BACK API CONTINOUS DEPLOYMENT
+  login-push-bank:
+    uses: ./.github/workflows/login-build-push.yml
+    secrets:
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_username: ${{ secrets.DOCKER_USERNAME }}
+      repository_name: ${{ secrets.DOCKER_REPOSITORY_BANK }}
+
+  ec2-cd-userdomain:
+    needs: [login-push-bank]
+    uses: ./.github/workflows/setupDocker.yml
+    secrets:
+      ec2_host: ${{ secrets.EC2_HOST_BANCK }}
+      ec2_key: ${{ secrets.EC2_KEY_BANCK }}
+      docker_username: ${{ secrets.DOCKER_USERNAME }}
