@@ -5,12 +5,12 @@ const router = Router()
 
 //router.post('/', createUser)
 
-router.post('/', updateUser)
+router.put('/', updateUser)
 
 router.delete('/:id', deleteUser)
 
 router.get('/', listUsers)
 
-router.get('/:ci', listUser)
+router.post('/', listUser)
 
 export default router;
