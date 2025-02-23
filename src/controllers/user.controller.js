@@ -45,7 +45,7 @@ export const listUser = async (req, res)=>{
         const {ci} = await req.params
         const users= await User.findOne({ci:ci}).lean()
         console.log(users)
-        res.json({users:users})
+        res.json(users)
     }catch(error){
         return res.json({message: error.message})
     }
