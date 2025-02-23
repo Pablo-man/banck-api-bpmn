@@ -33,9 +33,7 @@ export const deleteUser = async (req, res)=>{
 
 export const listUsers = async (req, res)=>{
     try{
-        //const users= await User.find().lean()
-        const {ci} = req.body
-        console.log(ci)
+        const users= await User.find().lean()
         res.json({users:users})
     }catch(error){
         return res.json({message: error.message})
